@@ -1,0 +1,14 @@
+pre-commit:
+  commands:
+    rustfmt:
+      glob: '*.rs'
+      run: rustfmt {staged_files}
+      stage_fixed: true
+    clippy:
+      run: cargo clippy --all-targets --all-features -- -D warnings
+    test:
+      run: cargo test --all
+commit-msg:
+  commands:
+    commitlint:
+      run: commitlint -g .commitlintrc.yaml -e

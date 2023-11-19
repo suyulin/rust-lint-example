@@ -1,0 +1,6 @@
+rules:
+  type:
+    level: error
+    options:
+      - feat
+      - fix
